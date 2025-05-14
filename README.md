@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">Template App</h1>
 <h3 align="center">
-  Template App for Open Web Desktop.
+  Quick start a new Open Web Desktop application.
 </h3>
 
 ## Overview
@@ -12,7 +12,7 @@ A template for your new Open Web Desktop application.
 
 ## Getting started
 
-1.  Use this template for a new repository or simply download it in `/apps`:
+1.  Use this template for a new repository or simply download it into your `/apps` directory:
 
     ```bash
     cd <your-owd-client-path>/apps
@@ -30,7 +30,7 @@ A template for your new Open Web Desktop application.
     })
     ```
     
-3.  Reinstall dependencies in your workspace for internal linking.
+3.  Reinstall dependencies in your workspace to enable internal linking:
 
     ```bash
     pnpm install
