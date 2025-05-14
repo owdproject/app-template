@@ -1,49 +1,41 @@
-# Sample module for OWD Client
-> Just a "hello world" module for Open Web Desktop
-
-<p>
-    <img src="media/demo.png" alt="OWD Sample module demo" />
+<p align="center">
+  <img width="160" height="160" src="https://avatars.githubusercontent.com/u/65117737?s=160&v=4" />
 </p>
-
-<p>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" /></a>
-    <a href="https://github.com/owdproject/owd-client"><img src="https://img.shields.io/badge/owd-client-3A9CB6" /></a>
-    <a href="https://github.com/topics/owd-modules"><img src="https://img.shields.io/badge/owd-modules-888" /></a>
-    <a href="https://hacklover.net/patreon"><img src="https://img.shields.io/badge/become-a%20patron-orange" alt="Become a Patron" /></a>
-    <a href="https://hacklover.net/discord"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Join us on Discord" /></a>
-</p>
+<h1 align="center">Template App</h1>
+<h3 align="center">
+  Template App for Open Web Desktop.
+</h3>
 
 ## Overview
-An app boilerplate for your Open Web Desktop client
 
-## Quick install
-- Move to your client folder, then
-  ```
-  # Enter modules app directory
-  cd src/modules/app/
-  
-  # Clone this repository
-  git clone https://github.com/hacklover/owd-app-sample sample
-  ```
-- Define this module in `owd-client/client.extensions.ts`
-  ```js
-  import AboutModule from "@owd-client/core/src/modules/app/about";
-  import DebugModule from "@owd-client/core/src/modules/app/debug";
-  import SampleModule from "~/modules/app/sample/client";
+A template for your new Open Web Desktop application.
 
-  export default {
-    app: {
-      modules: [
-        AboutModule,
-        DebugModule,
-        SampleModule,
-      ]
-    },
-    ...
-  ```
+## Getting started
 
-## Compatibility
-- Open Web Desktop client v2.0.0-beta.1
+1.  Use this template for a new repository or simply download it in `/apps`:
 
+    ```bash
+    cd <your-owd-client-path>/apps
+    wget -O - https://github.com/owdproject/app-template/archive/refs/heads/main.zip | unzip -d app-template -
+    ```
+    
+2.  Register the app in your desktop configuration file:
+
+    ```typescript
+    // owd.config.ts
+    export default defineDesktopConfig({
+        apps: [
+            "owd-app-template",
+        ]
+    })
+    ```
+    
+3.  Reinstall dependencies in your workspace for internal linking.
+
+    ```bash
+    pnpm install
+    ```
+    
 ## License
-This project is released under the [MIT License](LICENSE)
+
+This application is released under the [MIT License](LICENSE).
