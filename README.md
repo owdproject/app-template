@@ -22,7 +22,7 @@ A template for your new Open Web Desktop application.
 2.  Register the app in your desktop configuration file:
 
     ```typescript
-    // owd.config.ts
+    // /desktop/owd.config.ts
     export default defineDesktopConfig({
         apps: [
             "owd-app-template",
