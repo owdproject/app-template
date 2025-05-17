@@ -3,11 +3,7 @@
 </script>
 
 <template>
-  <Window :content="{padded: true}">
-    Hello! I'm an empty window.
-  </Window>
+  <Window :content="{ padded: true }"> Hello! I'm an empty window. </Window>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
