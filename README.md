@@ -6,6 +6,8 @@
   Quick start a new Open Web Desktop application.
 </h3>
 
+<br />
+
 ## Overview
 
 A template for your new Open Web Desktop application.
