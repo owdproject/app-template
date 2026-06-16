@@ -2,13 +2,13 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "runtime",
+    "rootDir": "src",
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "resolveJsonModule": true,
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo"
   },
-  "include": [".nuxt/nuxt.d.ts", "runtime/**/*"],
+  "include": [".nuxt/nuxt.d.ts", "src/**/*"],
   "exclude": [
     "out-tsc",
     "dist",

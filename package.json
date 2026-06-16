@@ -1,5 +1,5 @@
 {
-  "name": "owd-app-template",
+  "name": "@owdproject/app-template",
   "version": "0.0.1",
   "description": "Template App for your Open Web Desktop client",
   "keywords": [
@@ -7,11 +7,60 @@
     "owd-apps",
     "owd-modules"
   ],
-  "private": true,
   "license": "MIT",
   "homepage": "https://github.com/owdproject/app-template",
   "author": {
     "name": "Open Web Desktop Team",
     "url": "https://github.com/owdproject"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "development": "./src/module.ts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "pnpm run dev:prepare && cd playground && pnpm exec nuxt dev",
+    "dev:build": "nuxt build playground",
+    "dev:generate": "NUXT_APP_BASE_URL=${NUXT_APP_BASE_URL:-/app-template/} nuxt generate playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && cd playground && pnpm exec nuxt prepare",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "validate": "desktop validate .",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@owdproject/core": "^3.4.1",
+    "@owdproject/kit-tailwind": "^0.1.0"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^3.2.4",
+    "@nuxt/eslint-config": "^1.15.2",
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^4.4.6",
+    "@nuxt/test-utils": "^4.0.3",
+    "@types/node": "latest",
+    "changelogen": "^0.6.2",
+    "eslint": "^10.4.0",
+    "nuxt": "^4.4.6",
+    "typescript": "~6.0.3",
+    "vitest": "^4.1.7",
+    "vue-tsc": "^3.3.1"
   }
 }

@@ -4,11 +4,12 @@ import {
   addComponentsDir,
   addPlugin,
 } from '@nuxt/kit'
-import { registerTailwindPath } from '@owdproject/core'
+import { registerTailwindPath } from '@owdproject/kit-tailwind/kit/registerTailwindPath'
 
 export default defineNuxtModule({
   meta: {
-    name: 'owd-app-template',
+    name: 'desktop-app-template',
+    configKey: 'template'
   },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)

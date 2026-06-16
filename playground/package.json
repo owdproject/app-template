@@ -1,0 +1,15 @@
+{
+  "name": "@owdproject/app-template-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@owdproject/app-template": "workspace:*",
+    "@owdproject/core": "^3.4.1",
+    "@owdproject/theme-nova": "^0.0.2"
+  }
+}

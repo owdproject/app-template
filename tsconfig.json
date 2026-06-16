@@ -1,12 +1,15 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
+  "extends": "../../tsconfig.base.json",
+  "include": [
+    "src/runtime",
+    "src/module.ts"
   ],
-  "extends": "../../tsconfig.base.json"
+  "exclude": [
+    "dist",
+    "node_modules",
+    "playground"
+  ],
+  "compilerOptions": {
+    "outDir": "dist"
+  }
 }
