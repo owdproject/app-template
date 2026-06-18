@@ -45,11 +45,14 @@
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
+  "dependencies": {
+    "@owdproject/kit-tailwind": "workspace:*"
+  },
   "peerDependencies": {
-    "@owdproject/core": "^3.4.1",
-    "@owdproject/kit-tailwind": "^0.1.0"
+    "@owdproject/core": "^3.4.0"
   },
   "devDependencies": {
+    "@owdproject/core": "workspace:*",
     "@nuxt/devtools": "^3.2.4",
     "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/module-builder": "^1.0.2",

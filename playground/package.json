@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@owdproject/app-template": "workspace:*",
-    "@owdproject/core": "^3.4.1",
-    "@owdproject/theme-nova": "^0.0.2"
+    "@owdproject/core": "workspace:*",
+    "@owdproject/theme-nova": "workspace:*"
   }
 }

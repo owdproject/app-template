@@ -23,6 +23,12 @@ export default {
       command: 'myApp',
     },
   },
+  terminal: {
+    myApp: {
+      description: 'Open Template application',
+      usage: 'myApp',
+    },
+  },
   commands: {
     myApp: (app: IApplicationController) => {
       app.openWindow('main')
