@@ -18,7 +18,8 @@
     ".": {
       "types": "./dist/types.d.mts",
       "development": "./src/module.ts",
-      "import": "./dist/module.mjs"
+      "import": "./dist/module.mjs",
+      "default": "./dist/module.mjs"
     }
   },
   "main": "./dist/module.mjs",
