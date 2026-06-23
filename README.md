@@ -10,32 +10,62 @@
 
 ## Overview
 
-A template for your new Open Web Desktop application.
+A template for your new Open Web Desktop application. This template is designed to help you quickly bootstrap and build custom desktop apps.
 
-## Getting started
+[Demo](https://owdproject.github.io/) · [Documentation](https://owdproject.github.io/docs/) · [Support](https://github.com/sponsors/owdproject)
 
-1.  Use this template for a new repository or simply download it into your `/apps` directory:
+## Getting Started
 
-    ```bash
-    cd <your-owd-client-path>/apps
-    wget -O - https://github.com/owdproject/app-template/archive/refs/heads/main.zip | unzip -d app-template -
-    ```
+### Method 1: Using the OWD CLI (Recommended)
 
-2.  Register the app in your desktop configuration file:
+Run the following command in your OWD workspace root to scaffold a new application automatically:
 
-    ```typescript
-    // /desktop/owd.config.ts
-    export default defineDesktopConfig({
-      apps: ['owd-app-template'],
-    })
-    ```
+```bash
+pnpm desktop create app <name>
+```
 
-3.  Reinstall dependencies in your workspace to enable internal linking:
+This command will:
+- Copy the template files into `apps/app-<name>`
+- Perform package name and namespace replacements
+- Run `pnpm install` in the workspace root
+- Link the new app and register it under the `apps` key in your `desktop/desktop.config.ts`
 
-    ```bash
-    pnpm install
-    ```
+### Method 2: Manual Installation
+
+If you prefer to manually clone and set up the application template:
+
+1. Download or clone this repository into your `/apps` directory:
+   ```bash
+   cd <your-owd-client-path>/apps
+   wget -O - https://github.com/owdproject/app-template/archive/refs/heads/main.zip | unzip -d app-<name> -
+   ```
+
+2. Open the newly created `apps/app-<name>/package.json` and change the `"name"` field to `@owdproject/app-<name>`.
+
+3. Register the app under the `apps` key in your `desktop/desktop.config.ts`:
+   ```typescript
+   export default defineDesktopConfig({
+     apps: [
+       '@owdproject/app-<name>'
+     ]
+   })
+   ```
+
+4. Install dependencies in your workspace to enable internal linking:
+   ```bash
+   pnpm install
+   ```
+
+## Development
+
+Run the app playground to test your implementation:
+
+```bash
+cd apps/app-<name>
+pnpm run dev
+```
 
 ## License
 
 This application is released under the [MIT License](LICENSE).
+
